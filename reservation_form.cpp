@@ -16,7 +16,16 @@ Reservation_Form::Reservation_Form(QWidget *parent)
     ui -> stay_length -> setRange(1, 7);
     ui -> guest_num -> setMinimum(1);
 
+    QPalette palette = ui -> centralwidget -> palette();
+    palette.setColor(QPalette::Window, QColor::fromRgb(93, 225, 159));
+    ui -> centralwidget -> setAutoFillBackground(true);
+    ui -> centralwidget -> setPalette(palette);
 
+    QPalette palette2 = ui -> centralwidget -> palette();
+    palette2.setColor(QPalette::ButtonText, QColor::fromRgb(174, 24, 87));
+    ui -> centralwidget -> setAutoFillBackground(true);
+    ui -> centralwidget -> setPalette(palette2);
+    ui -> centralwidget -> show();
 }
 
 Reservation_Form::~Reservation_Form()
@@ -185,6 +194,11 @@ void Reservation_Form::SetPage2Labels(){
     ui->total_cost_num->setText(QString::number(currentRecord.CalculateCosts() + tax));
 }
 
+void Reservation_Form::on_enter_name_textChanged()
+{
+    Page1Complete();
+
+}
 void Reservation_Form::on_back_to_1_clicked()
 {
     ui -> stackedWidget -> setCurrentIndex(0);
@@ -266,7 +280,6 @@ void Reservation_Form::on_dateEdit_userDateChanged(const QDate &date)
     currentRecord.SetStartOfStay(startDate.toStdString());
 }
 
-<<<<<<< HEAD
 void Reservation_Form::SetPage3Labels() {
     double roomCost = currentRecord.ROOM_COST[currentRecord.GetRoomType()] * currentRecord.GetNightsStayed();
     double tax = roomCost * 0.15;
@@ -301,9 +314,6 @@ void Reservation_Form::SetPage3Labels() {
 void Reservation_Form::on_exit_clicked()
 {
     QApplication::quit();
-=======
-void Reservation_Form::on_enter_name_textChanged()
-{
-    Page1Complete();
->>>>>>> 1b0adf893cc190d320d6c829a495cbfc004019cf
 }
+
+
