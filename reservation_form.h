@@ -54,12 +54,6 @@ private slots:
     void on_dateEdit_userDateChanged(const QDate &date);
 
     void SetPage3Labels();
-<<<<<<< HEAD
-
-    void Page1Complete();
-
-    void on_enter_name_textChanged();
-=======
 
     void Page1Complete();
 
@@ -67,7 +61,6 @@ private slots:
 
     void LoadAndDisplayImages();
 
->>>>>>> 961c661a700d1b951564e26eafe5059666fd81f3
 
 private:
     Ui::Reservation_Form *ui;

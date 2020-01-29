@@ -353,14 +353,7 @@ void Reservation_Form::SetPage3Labels() {
 void Reservation_Form::on_exit_clicked()
 {
     QApplication::quit();
-<<<<<<< HEAD
-=======
 }
 
-void Reservation_Form::on_enter_name_textChanged()
-{
-    Page1Complete();
->>>>>>> 961c661a700d1b951564e26eafe5059666fd81f3
-}
 
 
