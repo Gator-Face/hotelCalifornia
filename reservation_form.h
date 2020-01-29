@@ -58,7 +58,14 @@ private slots:
 
     void on_enter_name_textChanged();
 
+    void LoadAndDisplayImages();
+
+
 private:
     Ui::Reservation_Form *ui;
+    QPixmap imgBed;
+    QPixmap imgCar;
+    QPixmap imgMoney;
+    QPixmap imgThankyou;
 };
 #endif // RESERVATION_FORM_H

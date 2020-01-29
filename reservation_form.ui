@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Reservation_Form</string>
+   <string>Hotel California</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QStackedWidget" name="stackedWidget">
@@ -434,6 +434,32 @@
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
+     <widget class="QLabel" name="carLabel">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>500</y>
+        <width>141</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="bedLabel">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>110</y>
+        <width>91</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
      <zorder>parking</zorder>
      <zorder>size</zorder>
      <zorder>view</zorder>
@@ -450,6 +476,8 @@
      <zorder>estimate_cost</zorder>
      <zorder>total_sum</zorder>
      <zorder>label_2</zorder>
+     <zorder>carLabel</zorder>
+     <zorder>bedLabel</zorder>
     </widget>
     <widget class="QWidget" name="page_2">
      <widget class="QLabel" name="summary">
@@ -864,6 +892,19 @@
        </property>
       </widget>
      </widget>
+     <widget class="QLabel" name="moneyLabel">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>480</y>
+        <width>111</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_3">
      <widget class="QLabel" name="reserve_confirm">
@@ -1141,6 +1182,19 @@
       </property>
       <property name="text">
        <string>GoodBye</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="thankyouLabel">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>460</y>
+        <width>381</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
       </property>
      </widget>
     </widget>
