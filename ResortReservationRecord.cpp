@@ -28,6 +28,7 @@ void ResortReservationRecord::SetNightsStayed(size_t nights) {
 }
 
 size_t ResortReservationRecord::GetGuests() {
+    // Limits number of guests, King - 3, Queen - 4
     if((roomType == 1 || roomType == 2) && numGuests > 4){
         numGuests = 4;
     }else if(numGuests > 3){
