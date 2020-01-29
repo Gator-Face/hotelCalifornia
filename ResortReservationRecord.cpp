@@ -7,7 +7,7 @@ using namespace std;
 ResortReservationRecord::ResortReservationRecord(){
     roomType = 0;
     numNights = 1;
-
+    numGuests = 1;
 }
 
 string ResortReservationRecord::GetCustomersName() {
@@ -27,6 +27,19 @@ void ResortReservationRecord::SetNightsStayed(size_t nights) {
   numNights = nights;
 }
 
+size_t ResortReservationRecord::GetGuests() {
+    if((roomType == 1 || roomType == 2) && numGuests > 4){
+        numGuests = 4;
+    }else if(numGuests > 3){
+        numGuests = 3;
+    }
+
+    return numGuests;
+}
+
+void ResortReservationRecord::SetGuests(size_t guests) {
+    numGuests = guests;
+}
 
 bool ResortReservationRecord::GetParkingNeeded() {
   return parkingNeeded;

@@ -33,6 +33,8 @@ private slots:
 
     void on_stay_length_valueChanged(int arg1);
 
+    void on_guest_num_valueChanged(int arg1);
+
 private:
     Ui::Reservation_Form *ui;
 };

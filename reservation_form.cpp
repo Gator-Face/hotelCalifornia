@@ -41,7 +41,7 @@ void Reservation_Form::on_queen_clicked()
         currentRecord.SetRoomType(2);
     }
     ui -> total_sum -> setText(QString::number(currentRecord.CalculateCosts()));
-    ui -> guest_num -> setRange(1, 4);
+    //ui -> guest_num -> setRange(1, 4);
 }
 
 void Reservation_Form::on_king_clicked()
@@ -56,7 +56,7 @@ void Reservation_Form::on_king_clicked()
     }
 
     ui -> total_sum -> setText(QString::number(currentRecord.CalculateCosts()));
-    ui -> guest_num -> setRange(1, 3);
+    //ui -> guest_num -> setRange(1, 3);
 }
 
 void Reservation_Form::on_standard_clicked()
@@ -73,7 +73,7 @@ void Reservation_Form::on_standard_clicked()
         guests = 3;
     }
     ui -> total_sum -> setText(QString::number(currentRecord.CalculateCosts()));
-    ui -> guest_num -> setRange(1, guests);
+    //ui -> guest_num -> setRange(1, guests);
 }
 
 void Reservation_Form::on_atruim_clicked()
@@ -90,7 +90,7 @@ void Reservation_Form::on_atruim_clicked()
         guests = 3;
     }
     ui -> total_sum -> setText(QString::number(currentRecord.CalculateCosts()));
-    ui -> guest_num -> setRange(1, guests);
+   // ui -> guest_num -> setRange(1, guests);
 }
 
 void Reservation_Form::on_yes_clicked()
@@ -112,4 +112,10 @@ void Reservation_Form::on_stay_length_valueChanged(int arg1)
 
     ui -> total_sum -> setText(QString::number(currentRecord.CalculateCosts()));
 
+}
+
+void Reservation_Form::on_guest_num_valueChanged(int arg1)
+{
+    int val = ui->guest_num->value();
+    currentRecord.SetGuests(val);
 }

@@ -22,17 +22,18 @@ class ResortReservationRecord{
     double CalculateCosts();
     string CurrentChoice();
 
+    size_t GetGuests();
+    void   SetGuests(size_t guests);
+
   private:
     string customersName;
-
-    
     size_t roomType;
+
     const size_t ROOM_COST [5] = {0, 284, 325, 290, 350};
     const double PARKING_COST = 12.75;
+
     size_t numNights;
     bool parkingNeeded;
-    
-   
 
-
+    size_t numGuests;
 };
