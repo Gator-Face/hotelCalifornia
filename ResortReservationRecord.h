@@ -40,7 +40,7 @@ class ResortReservationRecord{
     //           3 - King STD, 4 - King Atrium
     const size_t ROOM_COST [5] = {0, 284, 325, 290, 350};
     const double PARKING_COST = 12.75;
-    const double RESORT_FEE = 1.00;
+    const double RESORT_FEE = 15.00;
 
   private:
     //
