@@ -292,7 +292,6 @@ void Reservation_Form::on_dateEdit_userDateChanged(const QDate &date)
     currentRecord.SetStartOfStay(startDate.toStdString());
 }
 
-<<<<<<< HEAD
 void Reservation_Form::SetPage3Labels() {
     double roomCost = currentRecord.ROOM_COST[currentRecord.GetRoomType()] * currentRecord.GetNightsStayed();
     double tax = roomCost * 0.15;
@@ -327,9 +326,9 @@ void Reservation_Form::SetPage3Labels() {
 void Reservation_Form::on_exit_clicked()
 {
     QApplication::quit();
-=======
+}
+
 void Reservation_Form::on_enter_name_textChanged()
 {
     Page1Complete();
->>>>>>> 1b0adf893cc190d320d6c829a495cbfc004019cf
 }
