@@ -27,15 +27,30 @@ private slots:
 
     void on_atruim_clicked();
 
+    void on_back_to_1_clicked();
+
+    void on_to_page_3_clicked();
+
+    void on_exit_clicked();
+
+    void on_VISA_clicked();
+
     void on_yes_clicked();
 
     void on_no_clicked();
+
+    void on_MasterCard_clicked();
+
+    void on_Discover_clicked();
+
+    void on_American_Express_clicked();
 
     void on_stay_length_valueChanged(int arg1);
 
     void on_guest_num_valueChanged(int arg1);
 
     void SetPage2Labels();
+
 
 private:
     Ui::Reservation_Form *ui;
