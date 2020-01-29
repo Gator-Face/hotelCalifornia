@@ -243,11 +243,11 @@ void Reservation_Form::on_American_Express_clicked()
  * ========================================================
  */
 
-/*void Reservation_Form::on_dateEdit_userDateChanged(const QDate &date)
+void Reservation_Form::on_dateEdit_userDateChanged(const QDate &date)
 {
     QString startDate = ui->dateEdit->date().toString("dd/MM/yyyy");
     currentRecord.SetStartOfStay(startDate.toStdString());
-}*/
+}
 
 void Reservation_Form::SetPage3Labels() {
     double roomCost = currentRecord.ROOM_COST[currentRecord.GetRoomType()] * currentRecord.GetNightsStayed();

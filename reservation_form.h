@@ -51,7 +51,7 @@ private slots:
 
     void SetPage2Labels();
 
-//    void on_dateEdit_userDateChanged(const QDate &date);
+    void on_dateEdit_userDateChanged(const QDate &date);
 
     void SetPage3Labels();
 
