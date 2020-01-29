@@ -39,6 +39,43 @@
         <height>34</height>
        </rect>
       </property>
+      <property name="palette">
+       <palette>
+        <active>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>174</red>
+            <green>24</green>
+            <blue>87</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>174</red>
+            <green>24</green>
+            <blue>87</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>174</red>
+            <green>24</green>
+            <blue>87</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
       <property name="text">
        <string>Next</string>
       </property>
@@ -1206,7 +1243,7 @@
      <x>0</x>
      <y>0</y>
      <width>692</width>
-     <height>22</height>
+     <height>30</height>
     </rect>
    </property>
   </widget>

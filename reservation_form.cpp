@@ -17,7 +17,16 @@ Reservation_Form::Reservation_Form(QWidget *parent)
     ui -> guest_num -> setMinimum(1);
     LoadAndDisplayImages();
 
+    QPalette palette = ui -> centralwidget -> palette();
+    palette.setColor(QPalette::Window, QColor::fromRgb(93, 225, 159));
+    ui -> centralwidget -> setAutoFillBackground(true);
+    ui -> centralwidget -> setPalette(palette);
 
+    QPalette palette2 = ui -> centralwidget -> palette();
+    palette2.setColor(QPalette::ButtonText, QColor::fromRgb(174, 24, 87));
+    ui -> centralwidget -> setAutoFillBackground(true);
+    ui -> centralwidget -> setPalette(palette2);
+    ui -> centralwidget -> show();
 }
 
 Reservation_Form::~Reservation_Form()
@@ -214,6 +223,11 @@ void Reservation_Form::SetPage2Labels(){
     on_VISA_clicked();
 }
 
+void Reservation_Form::on_enter_name_textChanged()
+{
+    Page1Complete();
+
+}
 void Reservation_Form::on_back_to_1_clicked()
 {
     ui -> stackedWidget -> setCurrentIndex(0);
@@ -339,9 +353,14 @@ void Reservation_Form::SetPage3Labels() {
 void Reservation_Form::on_exit_clicked()
 {
     QApplication::quit();
+<<<<<<< HEAD
+=======
 }
 
 void Reservation_Form::on_enter_name_textChanged()
 {
     Page1Complete();
+>>>>>>> 961c661a700d1b951564e26eafe5059666fd81f3
 }
+
+
