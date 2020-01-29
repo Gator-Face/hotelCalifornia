@@ -36,7 +36,6 @@ void Reservation_Form::on_queen_clicked()
 {
     bool isStandardChecked = ui -> standard -> isChecked();
     bool isAtruimChecked = ui -> atruim -> isChecked();
-    bool isYesChecked = ui -> yes -> isChecked();
 
     if (isStandardChecked) {
         currentRecord.SetRoomType(1);
@@ -52,7 +51,6 @@ void Reservation_Form::on_king_clicked()
 {
     bool isStandardChecked = ui -> standard -> isChecked();
     bool isAtruimChecked = ui -> atruim -> isChecked();
-    bool isYesChecked = ui -> yes -> isChecked();
 
     if (isStandardChecked) {
         currentRecord.SetRoomType(3);
@@ -69,7 +67,6 @@ void Reservation_Form::on_standard_clicked()
 {
     bool isQueenChecked = ui -> queen -> isChecked();
     bool isKingChecked = ui -> king -> isChecked();
-    bool isYesChecked = ui -> yes -> isChecked();
     int guests = 0;
 
     if (isQueenChecked) {
@@ -88,7 +85,6 @@ void Reservation_Form::on_atruim_clicked()
 {
     bool isQueenChecked = ui -> queen -> isChecked();
     bool isKingChecked = ui -> king -> isChecked();
-    bool isYesChecked = ui -> yes -> isChecked();
     int guests = 0;
 
     if (isQueenChecked) {
@@ -163,7 +159,7 @@ void Reservation_Form::on_VISA_clicked()
 void Reservation_Form::on_MasterCard_clicked()
 {
     ui -> card_num -> setValidator( new QIntValidator(0, 9, this) );
-    ui -> card_num -> setInputMask("9999 9999 9999 9999");
+    ui -> card_num -> setInputMask("9999-9999-9999-9999");
     ui -> card_num -> setMaxLength(16);
 
     ui -> exp_date -> setValidator( new QIntValidator(0, 9, this) );
@@ -174,7 +170,7 @@ void Reservation_Form::on_MasterCard_clicked()
 void Reservation_Form::on_Discover_clicked()
 {
     ui -> card_num -> setValidator( new QIntValidator(0, 9, this) );
-    ui -> card_num -> setInputMask("9999 9999 9999 9999");
+    ui -> card_num -> setInputMask("9999-9999-9999-9999");
     ui -> card_num -> setMaxLength(16);
 
     ui -> exp_date -> setValidator( new QIntValidator(0, 9, this) );
@@ -185,7 +181,7 @@ void Reservation_Form::on_Discover_clicked()
 void Reservation_Form::on_American_Express_clicked()
 {
     ui -> card_num -> setValidator( new QIntValidator(0, 9, this) );
-    ui -> card_num -> setInputMask("9999 999999 99999");
+    ui -> card_num -> setInputMask("9999-999999-99999");
     ui -> card_num -> setMaxLength(15);
 
     ui -> exp_date -> setValidator( new QIntValidator(0, 9, this) );
