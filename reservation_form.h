@@ -57,8 +57,6 @@ private slots:
 
     void Page1Complete();
 
-    void Page1Complete();
-
     void on_enter_name_textChanged();
 
     void LoadAndDisplayImages();

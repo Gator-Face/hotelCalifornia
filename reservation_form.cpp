@@ -218,6 +218,9 @@ void Reservation_Form::SetPage2Labels(){
     ui->resort_fee_num->setText(QString::number(currentRecord.GetNightsStayed() * currentRecord.RESORT_FEE));
 
     ui->total_cost_num->setText(QString::number(currentRecord.CalculateCosts() + tax));
+
+    // Sets validator for text before any credit card type is chosen
+    on_VISA_clicked();
 }
 
 void Reservation_Form::on_enter_name_textChanged()
@@ -232,11 +235,20 @@ void Reservation_Form::on_back_to_1_clicked()
 
 void Reservation_Form::on_to_page_3_clicked()
 {
-    QMessageBox processed_msg;
-    processed_msg.setText("transaction processed successfully");
-    processed_msg.exec();
-    ui -> stackedWidget -> setCurrentIndex(2);
-    SetPage3Labels();
+    QString msg = "transaction failed. Please try again";
+    if(ui->card_num->text().toStdString().length() >= 15 && ui->card_num->text().toStdString().length() >= 15){
+        msg = "transaction processed successfully";
+        QMessageBox processed_msg;
+        processed_msg.setText(msg);
+        processed_msg.exec();
+        ui -> stackedWidget -> setCurrentIndex(2);
+        SetPage3Labels();
+    }else{
+        QMessageBox processed_msg;
+        processed_msg.setText(msg);
+        processed_msg.exec();
+    }
+
 }
 
 void Reservation_Form::on_VISA_clicked()
@@ -332,7 +344,8 @@ void Reservation_Form::SetPage3Labels() {
     ui -> complete_cost -> setText(QString::number(currentRecord.CalculateCosts() + tax));
     QString creditcard_full = ui -> card_num -> text();
     string last4digits = creditcard_full.toStdString();
-    last4digits = last4digits.substr(10, 4);
+    last4digits = last4digits.substr(last4digits.length() - 4, 4);
+
     ui -> card_info -> setText(QString::fromStdString(last4digits));
 }
 
@@ -346,5 +359,6 @@ void Reservation_Form::on_enter_name_textChanged()
 {
     Page1Complete();
 }
+
 
 
