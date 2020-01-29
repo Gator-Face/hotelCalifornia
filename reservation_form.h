@@ -52,6 +52,8 @@ private slots:
     void SetPage2Labels();
 
 
+    void on_dateEdit_userDateChanged(const QDate &date);
+
 private:
     Ui::Reservation_Form *ui;
 };
