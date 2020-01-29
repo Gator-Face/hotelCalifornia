@@ -31,6 +31,16 @@ Reservation_Form::~Reservation_Form()
  *
  * ========================================================
  */
+
+void Reservation_Form::Page1Complete(){
+    bool nameBoxFilled = ui->enter_name->toPlainText() != "";
+    bool roomTypeChosen = (ui->standard->isChecked() || ui->atruim->isChecked()) && (ui->king->isChecked() || ui->queen->isChecked());
+    bool dateFilled = ui->dateEdit->date().toString("dd/MM/yyyy").toStdString() != "00/00/00";
+    bool parkingFilled = ui->yes->isChecked() || ui->no->isChecked();
+
+    ui->to_page_2->setEnabled(nameBoxFilled && roomTypeChosen && dateFilled && parkingFilled);
+}
+
 void Reservation_Form::on_to_page_2_clicked()
 {
     QString customerName = ui->enter_name->toPlainText(); // Gets text from textbox
@@ -54,6 +64,7 @@ void Reservation_Form::on_queen_clicked()
     ui -> guest_num -> setMaximum(4);
     ui -> total_sum -> setText(QString::number(currentRecord.CalculateCosts()));
     ui -> guest_num -> setRange(1, 4);
+    Page1Complete();
 
 }
 
@@ -71,6 +82,7 @@ void Reservation_Form::on_king_clicked()
     ui -> guest_num -> setMaximum(3);
     ui -> total_sum -> setText(QString::number(currentRecord.CalculateCosts()));
     ui -> guest_num -> setRange(1, 3);
+    Page1Complete();
 
 }
 
@@ -91,6 +103,7 @@ void Reservation_Form::on_standard_clicked()
     ui -> guest_num -> setMaximum(guests);
     ui -> total_sum -> setText(QString::number(currentRecord.CalculateCosts()));
     ui -> guest_num -> setRange(1, guests);
+    Page1Complete();
 
 }
 
@@ -111,6 +124,7 @@ void Reservation_Form::on_atruim_clicked()
     ui -> guest_num -> setMaximum(guests);
     ui -> total_sum -> setText(QString::number(currentRecord.CalculateCosts()));
     ui -> guest_num -> setRange(1, guests);
+    Page1Complete();
 
 }
 
@@ -118,12 +132,14 @@ void Reservation_Form::on_yes_clicked()
 {
     currentRecord.SetParkingNeeded(true);
     ui -> total_sum -> setText(QString::number(currentRecord.CalculateCosts()));
+    Page1Complete();
 }
 
 void Reservation_Form::on_no_clicked()
 {
     currentRecord.SetParkingNeeded(false);
     ui -> total_sum -> setText(QString::number(currentRecord.CalculateCosts()));
+    Page1Complete();
 }
 
 void Reservation_Form::on_stay_length_valueChanged(int arg1)
@@ -139,6 +155,7 @@ void Reservation_Form::on_guest_num_valueChanged(int arg1)
 {
     int val = ui->guest_num->value();
     currentRecord.SetGuests(val);
+    Page1Complete();
 }
 
 
@@ -243,4 +260,9 @@ void Reservation_Form::on_dateEdit_userDateChanged(const QDate &date)
 {
     QString startDate = ui->dateEdit->date().toString("dd/MM/yyyy");
     currentRecord.SetStartOfStay(startDate.toStdString());
+}
+
+void Reservation_Form::on_enter_name_textChanged()
+{
+    Page1Complete();
 }
