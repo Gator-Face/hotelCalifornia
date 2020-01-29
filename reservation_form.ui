@@ -927,7 +927,7 @@
        <string>Reservation Confirmation</string>
       </property>
      </widget>
-     <widget class="QLabel" name="first_day">
+     <widget class="QLabel" name="label_day">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -946,7 +946,7 @@
        <string>First day of stay:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="night_staying">
+     <widget class="QLabel" name="label_night">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -965,7 +965,7 @@
        <string>Nights staying:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="room">
+     <widget class="QLabel" name="label_room">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -984,7 +984,7 @@
        <string>Room Type:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="parking_t">
+     <widget class="QLabel" name="label_parking">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -1003,7 +1003,7 @@
        <string>Parking:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="guests">
+     <widget class="QLabel" name="label_guests">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -1042,7 +1042,7 @@
        <string>Payment Information</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_9">
+     <widget class="QLabel" name="label_cost">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -1061,7 +1061,7 @@
        <string>Total Cost:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="credit_card">
+     <widget class="QLabel" name="label_card">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -1085,7 +1085,7 @@
        <rect>
         <x>240</x>
         <y>49</y>
-        <width>69</width>
+        <width>200</width>
         <height>31</height>
        </rect>
       </property>
@@ -1098,7 +1098,7 @@
        <rect>
         <x>240</x>
         <y>90</y>
-        <width>69</width>
+        <width>200</width>
         <height>31</height>
        </rect>
       </property>
@@ -1106,12 +1106,12 @@
        <string>TextLabel</string>
       </property>
      </widget>
-     <widget class="QLabel" name="rm_type_cost">
+     <widget class="QLabel" name="rm_type">
       <property name="geometry">
        <rect>
         <x>240</x>
         <y>130</y>
-        <width>69</width>
+        <width>200</width>
         <height>31</height>
        </rect>
       </property>
@@ -1124,7 +1124,7 @@
        <rect>
         <x>240</x>
         <y>210</y>
-        <width>69</width>
+        <width>200</width>
         <height>31</height>
        </rect>
       </property>
@@ -1132,12 +1132,12 @@
        <string>TextLabel</string>
       </property>
      </widget>
-     <widget class="QLabel" name="park_a_night">
+     <widget class="QLabel" name="park_per_night">
       <property name="geometry">
        <rect>
         <x>240</x>
         <y>170</y>
-        <width>69</width>
+        <width>200</width>
         <height>31</height>
        </rect>
       </property>
@@ -1150,7 +1150,7 @@
        <rect>
         <x>240</x>
         <y>310</y>
-        <width>69</width>
+        <width>200</width>
         <height>31</height>
        </rect>
       </property>
@@ -1163,7 +1163,7 @@
        <rect>
         <x>240</x>
         <y>360</y>
-        <width>69</width>
+        <width>200</width>
         <height>31</height>
        </rect>
       </property>

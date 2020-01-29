@@ -222,6 +222,7 @@ void Reservation_Form::on_to_page_3_clicked()
     processed_msg.setText("transaction processed successfully");
     processed_msg.exec();
     ui -> stackedWidget -> setCurrentIndex(2);
+    SetPage3Labels();
 }
 
 void Reservation_Form::on_VISA_clicked()
@@ -277,10 +278,13 @@ void Reservation_Form::on_American_Express_clicked()
     ui -> exp_date -> setMaxLength(6);
 }
 
-void Reservation_Form::on_exit_clicked()
-{
-    QApplication::quit();
-}
+/*
+ * ========================================================
+ *
+ *  These functions below belong to page 3 of the program
+ *
+ * ========================================================
+ */
 
 void Reservation_Form::on_dateEdit_userDateChanged(const QDate &date)
 {
@@ -288,7 +292,44 @@ void Reservation_Form::on_dateEdit_userDateChanged(const QDate &date)
     currentRecord.SetStartOfStay(startDate.toStdString());
 }
 
+<<<<<<< HEAD
+void Reservation_Form::SetPage3Labels() {
+    double roomCost = currentRecord.ROOM_COST[currentRecord.GetRoomType()] * currentRecord.GetNightsStayed();
+    double tax = roomCost * 0.15;
+
+
+    ui -> first_date -> setText(ui->dateEdit->date().toString("dd/MM/yyyy"));
+    ui -> num_nights -> setText(QString::number(currentRecord.GetNightsStayed()));
+    if (currentRecord.GetRoomType() == 1) {
+        ui -> rm_type -> setText("Standard, 2 queen beds");
+    } else if (currentRecord.GetRoomType() == 2) {
+        ui -> rm_type -> setText("Atrium, 2 queen beds");
+    } else if (currentRecord.GetRoomType() == 3) {
+        ui -> rm_type -> setText("Standard, 1 king bed");
+    } else {
+        ui -> rm_type -> setText("Atrium, 1 king bed");
+    }
+
+    if(currentRecord.GetParkingNeeded()){
+        ui -> park_per_night -> setText("Includes Parking");
+    }else{
+        ui -> park_per_night -> setText("No Parking");
+    }
+    ui -> total_guests -> setText(QString::number(currentRecord.GetGuests()));
+    ui -> complete_cost -> setText(QString::number(currentRecord.CalculateCosts() + tax));
+    QString creditcard_full = ui -> card_num -> text();
+    string last4digits = creditcard_full.toStdString();
+    last4digits = last4digits.substr(10, 4);
+    ui -> card_info -> setText(QString::fromStdString(last4digits));
+}
+
+
+void Reservation_Form::on_exit_clicked()
+{
+    QApplication::quit();
+=======
 void Reservation_Form::on_enter_name_textChanged()
 {
     Page1Complete();
+>>>>>>> 1b0adf893cc190d320d6c829a495cbfc004019cf
 }
