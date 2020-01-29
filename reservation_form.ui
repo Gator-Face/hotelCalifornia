@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page_1">
      <widget class="QPushButton" name="to_page_2">
@@ -370,6 +370,9 @@
       </property>
       <property name="layoutDirection">
        <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="minimum">
+       <number>1</number>
       </property>
      </widget>
      <widget class="QLabel" name="estimate_cost">
