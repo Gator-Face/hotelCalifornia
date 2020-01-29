@@ -22,12 +22,20 @@ Reservation_Form::~Reservation_Form()
     delete ui;
 }
 
+/*
+ * ========================================================
+ *
+ *  These functions below belong to page 1 of the program
+ *
+ * ========================================================
+ */
 void Reservation_Form::on_to_page_2_clicked()
 {
     QString customerName = ui->enter_name->toPlainText(); // Gets text from textbox
     currentRecord.SetCustomersName(customerName.toStdString());
 
     ui -> stackedWidget -> setCurrentIndex(1);
+    SetPage2Labels();
 }
 
 void Reservation_Form::on_queen_clicked()
@@ -41,7 +49,7 @@ void Reservation_Form::on_queen_clicked()
         currentRecord.SetRoomType(2);
     }
     ui -> total_sum -> setText(QString::number(currentRecord.CalculateCosts()));
-    //ui -> guest_num -> setRange(1, 4);
+    ui -> guest_num -> setRange(1, 4);
 }
 
 void Reservation_Form::on_king_clicked()
@@ -56,7 +64,7 @@ void Reservation_Form::on_king_clicked()
     }
 
     ui -> total_sum -> setText(QString::number(currentRecord.CalculateCosts()));
-    //ui -> guest_num -> setRange(1, 3);
+    ui -> guest_num -> setRange(1, 3);
 }
 
 void Reservation_Form::on_standard_clicked()
@@ -73,7 +81,7 @@ void Reservation_Form::on_standard_clicked()
         guests = 3;
     }
     ui -> total_sum -> setText(QString::number(currentRecord.CalculateCosts()));
-    //ui -> guest_num -> setRange(1, guests);
+    ui -> guest_num -> setRange(1, guests);
 }
 
 void Reservation_Form::on_atruim_clicked()
@@ -90,7 +98,7 @@ void Reservation_Form::on_atruim_clicked()
         guests = 3;
     }
     ui -> total_sum -> setText(QString::number(currentRecord.CalculateCosts()));
-   // ui -> guest_num -> setRange(1, guests);
+    ui -> guest_num -> setRange(1, guests);
 }
 
 void Reservation_Form::on_yes_clicked()
@@ -119,3 +127,31 @@ void Reservation_Form::on_guest_num_valueChanged(int arg1)
     int val = ui->guest_num->value();
     currentRecord.SetGuests(val);
 }
+
+
+/*
+ * ========================================================
+ *
+ *  These functions below belong to page 2 of the program
+ *
+ * ========================================================
+ */
+
+void Reservation_Form::SetPage2Labels(){
+    double roomCost = currentRecord.ROOM_COST[currentRecord.GetRoomType()] * currentRecord.GetNightsStayed();
+    double tax = roomCost * 0.15;
+
+    ui->room_fee_num->setText(QString::number(roomCost));
+    ui->tax_num->setText(QString::number(tax));
+
+    if(currentRecord.GetParkingNeeded()){
+        ui->parking_fee_num->setText(QString::number(currentRecord.GetNightsStayed()* currentRecord.PARKING_COST));
+    }else{
+        ui->parking_fee_num->setText("None");
+    }
+
+    ui->resort_fee_num->setText(QString::number(currentRecord.GetNightsStayed() * currentRecord.RESORT_FEE));
+
+    ui->total_cost_num->setText(QString::number(currentRecord.CalculateCosts() + tax));
+}
+

@@ -35,6 +35,8 @@ private slots:
 
     void on_guest_num_valueChanged(int arg1);
 
+    void SetPage2Labels();
+
 private:
     Ui::Reservation_Form *ui;
 };

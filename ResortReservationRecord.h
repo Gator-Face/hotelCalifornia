@@ -32,7 +32,12 @@ class ResortReservationRecord{
     // Gets all members of class in formated string
     string CurrentChoice();
 
-
+    // Costs of stuff
+    // Room key: 0 - nothing, 1 - Queen STD, 2 - Queen Atrium,
+    //           3 - King STD, 4 - King Atrium
+    const size_t ROOM_COST [5] = {0, 284, 325, 290, 350};
+    const double PARKING_COST = 12.75;
+    const double RESORT_FEE = 1.00;
 
   private:
     //
@@ -40,12 +45,6 @@ class ResortReservationRecord{
     //
     string customersName;
     size_t roomType;
-
-    // Costs of stuff
-    // Room key: 0 - nothing, 1 - Queen STD, 2 - Queen Atrium,
-    //           3 - King STD, 4 - King Atrium
-    const size_t ROOM_COST [5] = {0, 284, 325, 290, 350};
-    const double PARKING_COST = 12.75;
 
     size_t numNights;
     bool parkingNeeded;
