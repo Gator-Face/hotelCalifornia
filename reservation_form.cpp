@@ -181,18 +181,15 @@ void Reservation_Form::on_to_page_3_clicked()
     ui -> stackedWidget -> setCurrentIndex(2);
 }
 
-void Reservation_Form::on_exit_clicked()
-{
-    QApplication::quit();
-}
-
 void Reservation_Form::on_VISA_clicked()
 {
     ui -> card_num -> setValidator( new QIntValidator(0, 9, this) );
-    ui -> card_num -> setInputMask("9999-9999-9999-9999");
+    ui -> card_num -> setInputMask("");
+    ui -> card_num -> setInputMask("4999 9999 9999 9999");
     ui -> card_num -> setMaxLength(16);
 
     ui -> exp_date -> setValidator( new QIntValidator(0, 9, this) );
+    ui -> exp_date -> setInputMask("");
     ui -> exp_date -> setInputMask("99/9999");
     ui -> exp_date -> setMaxLength(6);
 }
@@ -201,10 +198,12 @@ void Reservation_Form::on_VISA_clicked()
 void Reservation_Form::on_MasterCard_clicked()
 {
     ui -> card_num -> setValidator( new QIntValidator(0, 9, this) );
-    ui -> card_num -> setInputMask("9999-9999-9999-9999");
+    ui -> card_num -> setInputMask("");
+    ui -> card_num -> setInputMask("5999 9999 9999 9999");
     ui -> card_num -> setMaxLength(16);
 
     ui -> exp_date -> setValidator( new QIntValidator(0, 9, this) );
+    ui -> exp_date -> setInputMask("");
     ui -> exp_date -> setInputMask("99/9999");
     ui -> exp_date -> setMaxLength(6);
 }
@@ -212,10 +211,12 @@ void Reservation_Form::on_MasterCard_clicked()
 void Reservation_Form::on_Discover_clicked()
 {
     ui -> card_num -> setValidator( new QIntValidator(0, 9, this) );
-    ui -> card_num -> setInputMask("9999-9999-9999-9999");
+    ui -> card_num -> setInputMask("");
+    ui -> card_num -> setInputMask("6999 9999 9999 9999");
     ui -> card_num -> setMaxLength(16);
 
     ui -> exp_date -> setValidator( new QIntValidator(0, 9, this) );
+    ui -> exp_date -> setInputMask("");
     ui -> exp_date -> setInputMask("99/9999");
     ui -> exp_date -> setMaxLength(6);
 }
@@ -223,10 +224,17 @@ void Reservation_Form::on_Discover_clicked()
 void Reservation_Form::on_American_Express_clicked()
 {
     ui -> card_num -> setValidator( new QIntValidator(0, 9, this) );
-    ui -> card_num -> setInputMask("9999-999999-99999");
+    ui -> card_num -> setInputMask("");
+    ui -> card_num -> setInputMask("3999 999999 99999");
     ui -> card_num -> setMaxLength(15);
 
     ui -> exp_date -> setValidator( new QIntValidator(0, 9, this) );
+    ui -> exp_date -> setInputMask("");
     ui -> exp_date -> setInputMask("99/9999");
     ui -> exp_date -> setMaxLength(6);
+}
+
+void Reservation_Form::on_exit_clicked()
+{
+    QApplication::quit();
 }
