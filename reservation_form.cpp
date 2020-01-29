@@ -15,6 +15,7 @@ Reservation_Form::Reservation_Form(QWidget *parent)
     ui -> total_sum -> setText(QString::number(0));
     ui -> stay_length -> setRange(1, 7);
     ui -> guest_num -> setMinimum(1);
+    LoadAndDisplayImages();
 
     QPalette palette = ui -> centralwidget -> palette();
     palette.setColor(QPalette::Window, QColor::fromRgb(93, 225, 159));
@@ -32,6 +33,31 @@ Reservation_Form::~Reservation_Form()
 {
     delete ui;
 }
+
+void Reservation_Form::LoadAndDisplayImages(){
+    QString bedPath = "imgs/bed.png";
+    QString carPath = "imgs/car.png";
+    QString moneyPath = "imgs/money.png";
+    QString thankyouPath = "imgs/thankyou.png";
+
+    imgBed.load(bedPath);
+    imgCar.load(carPath);
+    imgMoney.load(moneyPath);
+    imgThankyou.load(thankyouPath);
+
+
+    imgBed = imgBed.scaled(ui->bedLabel->size(), Qt::KeepAspectRatioByExpanding);
+    imgCar = imgCar.scaled(ui->carLabel->size(), Qt::KeepAspectRatioByExpanding);
+    imgMoney = imgMoney.scaled(ui->moneyLabel->size(), Qt::KeepAspectRatioByExpanding);
+    imgThankyou = imgThankyou.scaled(ui->thankyouLabel->size(), Qt::KeepAspectRatioByExpanding);
+
+    ui->bedLabel->setPixmap(imgBed);
+    ui->carLabel->setPixmap(imgCar);
+    ui->moneyLabel->setPixmap(imgMoney);
+    ui->thankyouLabel->setPixmap(imgThankyou);
+
+}
+
 
 /*
  * ========================================================
@@ -314,6 +340,14 @@ void Reservation_Form::SetPage3Labels() {
 void Reservation_Form::on_exit_clicked()
 {
     QApplication::quit();
+<<<<<<< HEAD
+=======
+}
+
+void Reservation_Form::on_enter_name_textChanged()
+{
+    Page1Complete();
+>>>>>>> 961c661a700d1b951564e26eafe5059666fd81f3
 }
 
 
