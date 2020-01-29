@@ -14,6 +14,9 @@ class ResortReservationRecord{
     string GetCustomersName();
     void  SetCustomersName(string name);
 
+    string GetStartOfStay();
+    void  SetStartOfStay(string date);
+
     size_t GetRoomType();
     void   SetRoomType(size_t roomType);
     
@@ -50,4 +53,6 @@ class ResortReservationRecord{
     bool parkingNeeded;
 
     size_t numGuests;
+
+    string startOfStay;
 };

@@ -238,3 +238,9 @@ void Reservation_Form::on_exit_clicked()
 {
     QApplication::quit();
 }
+
+void Reservation_Form::on_dateEdit_userDateChanged(const QDate &date)
+{
+    QString startDate = ui->dateEdit->date().toString("dd/MM/yyyy");
+    currentRecord.SetStartDate(startDate.toStdString());
+}

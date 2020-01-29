@@ -18,6 +18,13 @@ void ResortReservationRecord::SetCustomersName(string name) {
   customersName = name;
 }
 
+string ResortReservationRecord::GetStartOfStay() {
+  return startOfStay;
+}
+
+void ResortReservationRecord::SetStartOfStay(string date) {
+  startOfStay = date;
+}
 
 size_t ResortReservationRecord::GetNightsStayed() {
   return numNights;
