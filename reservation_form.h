@@ -31,6 +31,8 @@ private slots:
 
     void on_no_clicked();
 
+    void on_stay_length_valueChanged(int arg1);
+
 private:
     Ui::Reservation_Form *ui;
 };

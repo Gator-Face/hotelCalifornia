@@ -5,6 +5,7 @@ using namespace std;
 
 class ResortReservationRecord{
   public:
+    ResortReservationRecord();
     ResortReservationRecord(string name, size_t roomType, size_t nights, bool isParking);
     string GetCustomersName();
     void  SetCustomersName(string name);

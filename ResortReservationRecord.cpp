@@ -4,6 +4,11 @@
 
 using namespace std;
 
+ResortReservationRecord::ResortReservationRecord(){
+    roomType = 0;
+    numNights = 1;
+
+}
 
 string ResortReservationRecord::GetCustomersName() {
   return customersName;
